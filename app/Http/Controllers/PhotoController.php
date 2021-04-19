@@ -10,6 +10,7 @@ class PhotoController extends Controller
     public function index()
     {
         // TODO
+        return view('photo.index');
     }
 
     public function store()

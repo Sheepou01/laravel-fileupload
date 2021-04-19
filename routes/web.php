@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PhotoController::index')->name('home');
-Route::post('/store', 'PhotoController::store')->name('photo_store');
-Route::post('/download/{id}', 'PhotoController::download')->name('photo_download');
-Route::delete('/delete/{id}', 'PhotoController::destroy')->name('photo_delete');
+Route::get('/', [PhotoController::class, 'index'])->name('home');
+Route::post('/store', [PhotoController::class, 'store'])->name('photo_store');
+Route::post('/download/{id}', [PhotoController::class, 'download'])->name('photo_download');
+Route::delete('/delete/{id}', [PhotoController::class, 'destroy'])->name('photo_delete');
