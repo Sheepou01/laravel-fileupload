@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PhotoController::index')->name('home');
+Route::post('/store', 'PhotoController::store')->name('photo_store');
+Route::post('/download/{id}', 'PhotoController::download')->name('photo_download');
+Route::delete('/delete/{id}', 'PhotoController::destroy')->name('photo_delete');
